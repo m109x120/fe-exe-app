@@ -10,7 +10,7 @@ const count = ref(0)
 
 <template>
   <h1>{{ msg }}</h1>
-
+  <ElButton type="danger">HelloWorld</ElButton>
   <p>
     Recommended IDE setup:
     <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
