@@ -1,5 +1,20 @@
 <template>
-  <h1>hello</h1>
-  <div>欢迎来到v3的世界</div>
+  <div v-for="(item, key) in list" :key="key">
+    {{ item.uName }}--{{ item.age }}
+  </div>
   <ElButton type="success">haha</ElButton>
 </template>
+<script>
+
+export default{
+  data() {
+    return {
+      list: []
+    }
+  },
+  async created () {
+    const { list } = await this.$apis.get('test/list')
+    this.list = list
+  }
+}
+</script>
