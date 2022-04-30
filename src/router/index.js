@@ -1,20 +1,26 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-
-import Home from '../views/home/index.vue'
+import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home,
+    component: () => import('../views/home/index.vue'),
     meta: {
       title: '首页'
+    }
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'error',
+    component: () => import('../views/forbidden/index.vue'),
+    meta: {
+      title: '404'
     }
   }
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
 })
 export default router

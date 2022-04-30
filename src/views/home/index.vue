@@ -2,7 +2,7 @@
   <div v-for="(item, key) in list" :key="key">
     {{ item.uName }}--{{ item.age }}
   </div>
-  <ElButton type="success">haha</ElButton>
+  <ElButton type="success" @click="$router.push('/asdf')">haha</ElButton>
 </template>
 <script>
 
